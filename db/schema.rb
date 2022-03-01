@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_151219) do
     t.string "email"
     t.boolean "vip"
     t.integer "days_to_pay"
+    t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
