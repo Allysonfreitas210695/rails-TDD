@@ -7,7 +7,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it "Herança" do
-    customer = create(:customer_vip)
+    customer = build(:customer_vip)
     expect(customer.vip).to be true
   end
 
