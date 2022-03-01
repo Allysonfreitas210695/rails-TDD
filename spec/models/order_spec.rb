@@ -19,4 +19,9 @@ RSpec.describe Order, type: :model do
     # be_kind_of ou be_an ou be_a
     expect(order.customer).to be_an(Customer)
   end
+
+  it "Tem 3 pedidos" do
+    orders = create_list(:order, 3)
+    expect(orders.count).to eq(3)
+  end
 end
