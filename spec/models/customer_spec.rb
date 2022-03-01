@@ -31,5 +31,10 @@ RSpec.describe Customer, type: :model do
     puts attrs2
   end
 
+  it "Atributos Trasitorios" do
+    customer = create(:customer_default, upcased: true)
+    expect(customer.name.upcase).to eq(customer.name)
+  end
+
   it { expect{ create(:customer) }.to change { Customer.all.size }.by(1)}
 end
