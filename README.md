@@ -1,24 +1,10 @@
-# README
+## Rails com TDD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Esse curso é sobre Teste unitários, integração e sistema
+> o curso é ministrado pelo professor **_Jackson Pires_**
 
-Things you may want to cover:
+### Lista de Software de Teste
+> - RSpec
+> - Capybara
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![image do TDD com Rails](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4LkX68JoxfAsfZU9KMJ5AP_4NXf8GZ6Eaw&usqp=CAU)
