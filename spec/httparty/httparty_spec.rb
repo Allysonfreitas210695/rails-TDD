@@ -1,5 +1,8 @@
 describe "HTTParty" do
-  it "HTTParty" do
+  it "content-type" do
+    stub_request(:get, "https://jsonplaceholder.typicode.com/users/1")
+    .to_return(status: 200, body: "", headers: {'content-type': 'application/json'})
+
     response = HTTParty.get('https://jsonplaceholder.typicode.com/users/1')
     content_type = response.headers['content-type']
     code = response.code
