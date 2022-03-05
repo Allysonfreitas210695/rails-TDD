@@ -26,9 +26,9 @@ RSpec.describe Customer, type: :model do
     attrs = attributes_for(:customer)
     attrs1 = attributes_for(:customer_vip)
     attrs2 = attributes_for(:customer_default)
-    puts attrs
-    puts attrs1
-    puts attrs2
+    # puts attrs
+    # puts attrs1
+    # puts attrs2
   end
 
   it "Atributos Trasitorios" do
