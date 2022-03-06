@@ -20,6 +20,15 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe "as Logged Menber" do
+    it "messege to controller" do
+      customer_params = attributes_for(:customer)
+      sign_in @member
+      post :create, params: {customer: customer_params }
+      # p response
+      expect(flash[:notice]).to include("Customer was successfully created.")
+      expect(flash[:notice]).to match(/was successfully/)
+    end
+
     it "with valid attributes valid" do
       customer_params = attributes_for(:customer)
       sign_in @member
