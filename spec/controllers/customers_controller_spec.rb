@@ -26,6 +26,10 @@ RSpec.describe CustomersController, type: :controller do
       expect(response.content_type).to eq('application/json')
     end
 
+    it "Routes" do
+      is_expected.to route(:get, '/customers').to(action: :index)
+    end
+
     it "messege to controller" do
       customer_params = attributes_for(:customer)
       sign_in @member
@@ -35,13 +39,22 @@ RSpec.describe CustomersController, type: :controller do
       expect(flash[:notice]).to match(/was successfully/)
     end
 
-    it "with valid attributes valid" do
+    it "with valid attributes" do
       customer_params = attributes_for(:customer)
       sign_in @member
 
       expect {
         post :create, params: {customer: customer_params }
       }.to change(Customer, :count).by(1)
+    end
+
+    it "with invalid attributes" do
+      customer_params = attributes_for(:customer, address: nil)
+      sign_in @member
+
+      expect {
+        post :create, params: {customer: customer_params }
+      }.not_to change(Customer, :count)
     end
 
     it "responds sucessfully (Member success authorized)" do
