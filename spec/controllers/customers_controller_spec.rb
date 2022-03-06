@@ -20,31 +20,39 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe "as Logged Menber" do
-    it "responds sucessfully (success authorized)" do
-      member = create(:member)
-      customer = create(:customer)
+    it "with valid attributes valid" do
+      customer_params = attributes_for(:customer)
+      sign_in @member
 
-      sign_in member
-
-      get :show, params: { id: customer.id }
-      expect(response).to have_http_status(200)
+      expect {
+        post :create, params: {customer: customer_params }
+      }.to change(Customer, :count).by(1)
     end
 
     it "responds sucessfully (Member success authorized)" do
-      member = create(:member)
-      sign_in member
+      sign_in @member
 
-      get :show, params: { id: member.id }
+      get :show, params: { id: @member.id }
       expect(response).to be_successful
     end
 
+    before do
+      @member = create(:member)
+      @customer = create(:customer)
+    end
+
+    it "responds sucessfully (success authorized)" do
+
+      sign_in @member
+
+      get :show, params: { id: @customer.id }
+      expect(response).to have_http_status(200)
+    end
+
     it "render a :show template" do
-      member = create(:member)
-      customer = create(:customer)
+      sign_in @member
 
-      sign_in member
-
-      get :show, params: { id: customer.id }
+      get :show, params: { id: @customer.id }
       expect(response).to render_template(:show)
     end
   end
