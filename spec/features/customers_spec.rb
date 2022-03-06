@@ -25,4 +25,12 @@ RSpec.feature "Customers", type: :feature do
     end
   end
 
+  it "Ajax" do
+    visit(customers_path)
+
+    click_link("Add Message")
+
+    expect(page).to have_content("yes!")
+  end
+
 end
