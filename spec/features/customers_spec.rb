@@ -25,12 +25,19 @@ RSpec.feature "Customers", type: :feature do
     end
   end
 
-  it "Ajax" do
-    visit(customers_path)
+  # it "Ajax" do
+  #   visit(customers_path)
+  #
+  #   click_link("Add Message")
+  #
+  #   expect(page).to have_content("yes!")
+  # end
 
-    click_link("Add Message")
-
-    expect(page).to have_content("yes!")
-  end
+  # context "Find" do
+  #   it "verification text link" do
+  #     visit(customers_path)
+  #     expect(page.find('#my-div').find('h1')).to have_content('Yes!')
+  #   end
+  # end
 
 end

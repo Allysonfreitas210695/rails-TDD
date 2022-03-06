@@ -10,7 +10,7 @@ VCR.configure do |config|
 end
 
 
-Capybara.default_max_wait_time = 5
+# Capybara.default_max_wait_time = 5
 
 # Capybara.register_driver :chrome do |app|
 #   Capybara::Selenium::Driver.new app, browser: :chrome,
