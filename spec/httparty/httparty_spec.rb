@@ -1,4 +1,4 @@
-describe "HTTParty", vcr: { cassette_name: 'jsonplaceholder/posts', match_requests_on: [:body]} do
+describe "HTTParty", vcr: { cassette_name: 'jsonplaceholder/posts', :record => :new_episodes} do
   it "content-type" do
     # stub_request(:get, "https://jsonplaceholder.typicode.com/users/1")
     # .to_return(status: 200, body: "", headers: { 'content-type': 'application/json' })
