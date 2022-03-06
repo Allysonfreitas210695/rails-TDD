@@ -20,6 +20,12 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe "as Logged Menber" do
+    it "Content-type" do
+      sign_in @member
+      get :show, format: :json, params: { id: @customer.id }
+      expect(response.content_type).to eq('application/json')
+    end
+
     it "messege to controller" do
       customer_params = attributes_for(:customer)
       sign_in @member
