@@ -31,6 +31,9 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  
   # factory_bot
   config.include FactoryBot::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers
